@@ -8,10 +8,12 @@ import Head from "next/head";
 
 var boolean = false;
 
-if (typeof window !== "undefined" && localStorage.getItem("JS") === "ON") {
-  boolean = true;
-} else {
-  boolean = false;
+if (typeof window !== "undefined") {
+  if (window.localStorage.JS === "ON") {
+    boolean = true;
+  } else {
+    boolean = false;
+  }
 }
 
 console.log(boolean);
