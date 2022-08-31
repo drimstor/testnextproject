@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/future/image";
 import s from "../styles/Home.module.scss";
 import logo from "../public/images/logo.svg";
@@ -6,7 +5,19 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
-import { ConstructionOutlined } from "@mui/icons-material";
+
+console.log(boolean);
+var boolean = false;
+
+if (localStorage.getItem("JS") === "ON") {
+  boolean = true;
+} else {
+  boolean = false;
+}
+
+export const config = {
+  unstable_runtimeJS: boolean,
+};
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -76,9 +87,3 @@ export default function HomePage() {
 //     buttonValue = true;
 //   }
 // }
-
-console.log(localStorage.getItem("JS") === "ON");
-
-export const config = {
-  unstable_runtimeJS: localStorage.getItem("JS") === "ON",
-};
