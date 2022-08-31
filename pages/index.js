@@ -7,15 +7,16 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 
+if (typeof window !== "undefined") {
+  let button = document.querySelector('[data-action="boolean"]');
+  console.log(button);
+}
+
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
   const handleClick = (index) => {
     SetState(index);
-  };
-  const handleAction = () => {
-    navList.push("Item");
-    console.log(navList);
   };
 
   return (
@@ -24,7 +25,6 @@ export default function HomePage() {
         <script src="/script.js" defer />
       </Head>
 
-      
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
