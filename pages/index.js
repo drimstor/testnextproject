@@ -7,10 +7,10 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 
-if (typeof window !== "undefined") {
-  let button = document.querySelector('[data-action="boolean"]');
-  console.log(button);
-}
+// if (typeof window !== "undefined") {
+//   let button = document.querySelector('[data-action="boolean"]');
+//   console.log(button);
+// }
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -22,6 +22,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
+        <script src="/config.js" defer />
         <script src="/script.js" defer />
       </Head>
 
@@ -70,6 +71,6 @@ export default function HomePage() {
   );
 }
 
-export const config = {
-  unstable_runtimeJS: true ? false : true,
-};
+// export const config = {
+//   unstable_runtimeJS: true ? false : true,
+// };
