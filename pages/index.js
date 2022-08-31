@@ -6,7 +6,6 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 
-console.log(boolean);
 var boolean = false;
 
 if (localStorage.getItem("JS") === "ON") {
@@ -14,6 +13,8 @@ if (localStorage.getItem("JS") === "ON") {
 } else {
   boolean = false;
 }
+
+console.log(boolean);
 
 export const config = {
   unstable_runtimeJS: boolean,
