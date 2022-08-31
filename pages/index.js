@@ -38,10 +38,12 @@ export default function HomePage() {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <button id="btn" data-boolean="true">
-                Login
+              <button id="btnOn" data-boolean="true">
+                JS On
               </button>
-              <Button variant="contained">Contained</Button>
+              <Button id="btnOff" variant="contained">
+                JS Off
+              </Button>
             </div>
           </div>
         </header>
@@ -67,9 +69,8 @@ export default function HomePage() {
 }
 
 if (typeof window !== "undefined") {
-  var button = document.querySelector("#btn");
   var buttonValue = true;
-  if (localStorage.getItem("myCat") === "Tom") {
+  if (localStorage.getItem("JS") === "ON") {
     buttonValue = false;
   } else {
     buttonValue = true;
