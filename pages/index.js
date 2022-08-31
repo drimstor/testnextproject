@@ -6,20 +6,21 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 
-var boolean = false;
+// var boolean = false;
 
-if (typeof window !== "undefined") {
-  if (window.localStorage.JS === "ON") {
-    boolean = true;
-  } else {
-    boolean = false;
-  }
-}
+// if (typeof window !== "undefined") {
+//   if (window.localStorage.JS === "ON") {
+//     boolean = true;
+//   } else {
+//     boolean = false;
+//   }
+// }
 
-console.log(boolean);
+// console.log(boolean);
 
 export const config = {
-  unstable_runtimeJS: boolean,
+  unstable_runtimeJS:
+    typeof window !== "undefined" && window.localStorage.JS === "ON",
 };
 
 export default function HomePage() {
