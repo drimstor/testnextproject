@@ -38,14 +38,14 @@ export default function HomePage() {
             <div className={s.header__btns}>
               <button
                 id="btnOn"
-                onClick={() => handleClick(index)}
+                onClick={() => handleClick(false)}
                 data-boolean="true"
               >
                 JS On
               </button>
               <Button
                 id="btnOff"
-                onClick={() => handleClick(index)}
+                onClick={() => handleClick(false)}
                 variant="contained"
               >
                 JS Off
@@ -59,8 +59,8 @@ export default function HomePage() {
             <Image src={vercel} />
           </div>
           <div className={s.main}>
-            <div onClick={() => handleClick(index)}></div>
-            <div onClick={() => handleClick(index)}></div>
+            <div onClick={() => handleClick(false)}></div>
+            <div onClick={() => handleClick(false)}></div>
             <div></div>
             <div></div>
             <div></div>
