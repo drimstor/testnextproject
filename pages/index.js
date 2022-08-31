@@ -79,5 +79,5 @@ let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
 console.log(boolean);
 
 export const config = {
-  unstable_runtimeJS: boolean,
+  unstable_runtimeJS: !boolean,
 };
