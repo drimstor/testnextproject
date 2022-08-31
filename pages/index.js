@@ -5,6 +5,7 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
+import useForceUpdate from "use-force-update";
 
 // var boolean = false;
 
@@ -53,10 +54,18 @@ export default function HomePage() {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <button id="btnOn" data-boolean="true">
+              <button
+                id="btnOn"
+                onClick={() => handleClick(index)}
+                data-boolean="true"
+              >
                 JS On
               </button>
-              <Button id="btnOff" variant="contained">
+              <Button
+                id="btnOff"
+                onClick={() => handleClick(index)}
+                variant="contained"
+              >
                 JS Off
               </Button>
             </div>
@@ -68,8 +77,8 @@ export default function HomePage() {
             <Image src={vercel} />
           </div>
           <div className={s.main}>
-            <div onClick={() => console.log("Press")}></div>
-            <div onClick={() => handleAction()}></div>
+            <div onClick={() => handleClick(index)}></div>
+            <div onClick={() => handleClick(index)}></div>
             <div></div>
             <div></div>
             <div></div>
