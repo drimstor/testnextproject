@@ -5,7 +5,6 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
-import useForceUpdate from "use-force-update";
 
 // var boolean = false;
 
