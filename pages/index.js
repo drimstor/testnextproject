@@ -6,11 +6,7 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
-
-// if (typeof window !== "undefined") {
-//   let button = document.querySelector('[data-action="boolean"]');
-//   console.log(button);
-// }
+import { ConstructionOutlined } from "@mui/icons-material";
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -22,7 +18,6 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <script src="/config.js" defer />
         <script src="/script.js" defer />
       </Head>
 
@@ -71,6 +66,18 @@ export default function HomePage() {
   );
 }
 
-// export const config = {
-//   unstable_runtimeJS: true ? false : true,
-// };
+if (typeof window !== "undefined") {
+  var button = document.querySelector("#btn");
+  var buttonValue = true;
+  if (localStorage.getItem("myCat") === "Tom") {
+    buttonValue = false;
+  } else {
+    buttonValue = true;
+  }
+}
+
+console.log(buttonValue);
+
+export const config = {
+  unstable_runtimeJS: buttonValue ? false : true,
+};
