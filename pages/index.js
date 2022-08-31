@@ -6,23 +6,6 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 
-// var boolean = false;
-
-// if (typeof window !== "undefined") {
-//   if (window.localStorage.JS === "ON") {
-//     boolean = true;
-//   } else {
-//     boolean = false;
-//   }
-// }
-
-// console.log(boolean);
-
-export const config = {
-  unstable_runtimeJS:
-    typeof window !== "undefined" && window.localStorage.JS === "ON",
-};
-
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
@@ -91,11 +74,10 @@ export default function HomePage() {
   );
 }
 
-// if (typeof window !== "undefined") {
-//   var buttonValue = true;
-//   if (localStorage.getItem("JS") === "ON") {
-//     buttonValue = false;
-//   } else {
-//     buttonValue = true;
-//   }
-// }
+let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
+
+console.log(boolean);
+
+export const config = {
+  unstable_runtimeJS: boolean,
+};
