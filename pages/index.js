@@ -68,17 +68,17 @@ export default function HomePage() {
   );
 }
 
-if (typeof window !== "undefined") {
-  var buttonValue = true;
-  if (localStorage.getItem("JS") === "ON") {
-    buttonValue = false;
-  } else {
-    buttonValue = true;
-  }
-}
+// if (typeof window !== "undefined") {
+//   var buttonValue = true;
+//   if (localStorage.getItem("JS") === "ON") {
+//     buttonValue = false;
+//   } else {
+//     buttonValue = true;
+//   }
+// }
 
-console.log(buttonValue);
+console.log(localStorage.getItem("JS") === "ON");
 
 export const config = {
-  unstable_runtimeJS: buttonValue ? false : true,
+  unstable_runtimeJS: localStorage.getItem("JS") === "ON",
 };
