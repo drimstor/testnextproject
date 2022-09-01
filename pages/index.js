@@ -13,12 +13,18 @@ export default function HomePage() {
     SetState(index);
   };
 
+  // const root = ReactDOM.createRoot(
+  //   document.getElementById('root')
+  // );
+  // const renderPage = () => {
+  //   root.render(element);
+  // }
+
   return (
     <>
       <Head>
         <script src="/script.js" defer />
       </Head>
-
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
@@ -59,8 +65,8 @@ export default function HomePage() {
             <Image src={vercel} />
           </div>
           <div className={s.main}>
-            <div onClick={() => handleClick(false)}></div>
-            <div onClick={() => handleClick(false)}></div>
+            <div></div>
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
@@ -79,5 +85,5 @@ let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
 console.log(boolean);
 
 export const config = {
-  unstable_runtimeJS: !boolean,
+  unstable_runtimeJS: boolean,
 };
