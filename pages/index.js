@@ -61,7 +61,7 @@ export default function HomePage() {
         </header>
         <div className={s.wrapper}>
           <div className={s.title}>
-            <h1>Welcome to Next.js!</h1>
+            <h1>Welcome to Next.js!!</h1>
             <Image src={vercel} />
           </div>
           <div className={s.main}>
@@ -80,9 +80,12 @@ export default function HomePage() {
   );
 }
 
-let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
+let boolean =
+  typeof window !== "undefined" && document.cookie.includes("John")
+    ? true
+    : false;
 
-console.log(boolean);
+console.log(typeof window !== "undefined" && document.cookie.includes("John"));
 
 export const config = {
   unstable_runtimeJS: boolean,
